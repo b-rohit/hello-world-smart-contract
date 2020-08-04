@@ -1,0 +1,136 @@
+Truffle Develop started at http://127.0.0.1:9545/
+
+Accounts:
+(0) 0xde52d7bd317a02a03adb96ea5781b10a94723ef8
+(1) 0x89bcee11d41276ce456a4c589e81961b20ebab72
+(2) 0xe8d8d2386aecc8c3f0acd291968bf0a1f1d62b2e
+(3) 0xdcdf41c0cb899dd7d39458cc7bf2b62acc167397
+(4) 0x26ee146d210c0445df244404510966be39db8a85
+(5) 0x555cba3179345db1a9fe89b113bb50404b95b969
+(6) 0xbb2f856d0d13679cf4dd8f7c1ebfec339600f08c
+(7) 0xa9ac09f706b92c2dc9ec027dc17cbe051472e5af
+(8) 0xcfd23cf0b0cef012618120ccf7dc125727763188
+(9) 0x76e4147f7e3d344b9c3a3ae537ceb07de41ff502
+
+Private Keys:
+(0) 155cc73ce29bea06c4ed427a625ad54fead0c2dc226bc8beaed40971b64e4741
+(1) 10ef6f7ec5ec2e5678856a7d24d614db39eee51fd6bd3c6542c9716efd141307
+(2) 7f66aa0c3b655c2f58a92ba01dfc9de40c182807bf1117886984006dbb6da244
+(3) 442af4698a08294a66f731308db6c8a9dc7025454bd2e75afa20feb7af2d5dc4
+(4) 7113ac901b55e7ac0da2a2a9ac46502cdec08eddf65a0c7d95ef2f954aad7f8e
+(5) b64bec8d005c5071d221b8ca26acbc3cfeecc3e13658e67ec184bdf3dec03099
+(6) 846d25f93e922cf398211d8160407fa72d4aea781eee7a116bfcaffeface0f24
+(7) f75a4886c62316766e038917515bc8821b06aedc8c0649b90b81fd17b2f65214
+(8) e21dcce05d86151c320dc1b4b6a2fc7b83d9884e5bc25b3f443c27bf0c625769
+(9) 2bac9d4b4675799c57592125071bcb53a36d8a817350ba2438f3872144f7d46e
+
+Mnemonic: wagon pigeon capable tissue puppy harvest charge simple pet include dry blood
+
+⚠️  Important ⚠️  : This mnemonic was created for you by Truffle. It is not secure.
+Ensure you do not use it on production blockchains, or else you risk losing funds.
+
+truffle(develop)> compile
+
+Compiling your contracts...
+===========================
+> Compiling ./contracts/Migrations.sol
+> Compiling ./contracts/MyStatus.sol
+> Artifacts written to /home/rohit/Project/github/myrepos/hello-world-smart-contract/build/contracts
+> Compiled successfully using:
+   - solc: 0.5.16+commit.9c3226ce.Emscripten.clang
+
+truffle(develop)> migrate
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+
+Starting migrations...
+======================
+> Network name:    'develop'
+> Network id:      5777
+> Block gas limit: 6721975 (0x6691b7)
+
+
+1_initial_migration.js
+======================
+
+   Deploying 'Migrations'
+   ----------------------
+   > transaction hash:    0xb8c865bb6c236774051e23450e41870b870b495a6ddbfc50d8f4b9220180315d
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x7e8161b7f3B45a3aD37E629Ca3894C4a3cc3Bec4
+   > block number:        1
+   > block timestamp:     1596537726
+   > account:             0xDE52d7bD317A02A03ADb96ea5781B10a94723EF8
+   > balance:             99.9954955
+   > gas used:            225225 (0x36fc9)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0045045 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:           0.0045045 ETH
+
+
+2_deploy_contracts.js
+=====================
+
+   Deploying 'MyStatus'
+   --------------------
+   > transaction hash:    0xa179d4bc4a2e0b05ae0478a84e212c0584bb33c14e11f044f4a1806fe960c7a3
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x5c9d68Be5b087896A5c5255dF823Ff2Ea548ffc7
+   > block number:        3
+   > block timestamp:     1596537727
+   > account:             0xDE52d7bD317A02A03ADb96ea5781B10a94723EF8
+   > balance:             99.99001304
+   > gas used:            231760 (0x38950)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0046352 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:           0.0046352 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.0091397 ETH
+
+
+truffle(develop)> let instance = await MyStatus.deployed()
+undefined
+truffle(develop)> await instance.getStatus()
+'Busy'
+truffle(develop)> await instance.setStatus("Available")
+{
+  tx: '0xd9ae12f7070ad08f4f53ca0989395055001b44c6d42d75725c006964f1a86d4f',
+  receipt: {
+    transactionHash: '0xd9ae12f7070ad08f4f53ca0989395055001b44c6d42d75725c006964f1a86d4f',
+    transactionIndex: 0,
+    blockHash: '0x4d103e27d6198b2bf4ab0ee59468d09b3bf1540e2f152b03b2137eabac7cfcee',
+    blockNumber: 5,
+    from: '0xde52d7bd317a02a03adb96ea5781b10a94723ef8',
+    to: '0x5c9d68be5b087896a5c5255df823ff2ea548ffc7',
+    gasUsed: 28951,
+    cumulativeGasUsed: 28951,
+    contractAddress: null,
+    logs: [],
+    status: true,
+    logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+    rawLogs: []
+  },
+  logs: []
+}
+truffle(develop)> await instance.getStatus()
+'Available'
